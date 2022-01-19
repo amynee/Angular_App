@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit {
       completed: false
     },
     {
-      id: 1, 
+      id: 2, 
       title: 'Second Task', 
       completed: true
     }
@@ -21,6 +21,24 @@ export class TodosComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleTodo(todo) {
+    this.todos = this.todos.map((item) => {
+      if (todo.id == item.id)
+        item.completed = !item.completed
+      return item;
+    })
+  }
+
+  deleteTodo(todo) {
+    this.todos = this.todos.filter((item) => {
+      return todo.id !== item.id;
+    })
+  }
+
+  addTodo(todo) {
+    this.todos.push(todo);
   }
 
 }
