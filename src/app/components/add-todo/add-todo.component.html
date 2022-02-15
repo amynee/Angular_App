@@ -3,12 +3,12 @@
         type="text" 
         class="form-control" 
         placeholder="describe your task"
-        [(ngModel)]="text"
+        [(ngModel)]="title"
         name="text"
     />
     <br />
-    <p *ngIf="text.length > 0">
-        The task {{text}} will be added!
+    <p *ngIf="title.length > 0">
+        The task {{title}} will be added!
     </p>
     <button class="btn btn-primary btn-sm" type="submit">Add</button>
 </form>
